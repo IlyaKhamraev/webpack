@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack serve --mode=development",
     "dev": "webpack --mode=development",
     "prod": "webpack --node-env=production --mode=production",
     "clear": "rd /s /q dist"

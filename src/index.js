@@ -8,5 +8,5 @@ console.log(result);
 
 const mult = (a,b) => a * b;
 
-console.log(mult(2,5))
+console.log(mult(2,8))
 console.log(mult(2,5))
