@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const path = require("node:path");
 
 const mode = process.env.NODE_ENV || "development";
@@ -20,5 +22,14 @@ module.exports = {
         // таким образом браузер будет брать файлы не из хеша и отправлять клиенту,
         // а будет новые скачивать, если произошли изменения.
         filename: 'index.[contenthash].js' //
+    },
+    plugins: [new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, 'src', 'index.html'),
+    })],
+    module: {
+        rules: [{
+            test: /\.html$/i,
+            loader: "html-loader",
+        }]
     }
 }

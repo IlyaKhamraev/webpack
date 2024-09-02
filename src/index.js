@@ -1,3 +1,5 @@
+import './index.html'
+
 const arr = [10, 2];
 
 const sum = (a,b) => a + b;
