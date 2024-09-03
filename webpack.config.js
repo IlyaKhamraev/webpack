@@ -19,7 +19,7 @@ module.exports = {
     },
     entry: path.resolve(__dirname, 'src', 'index.js'),
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'build'),
         clean: true,
         // [contenthash] - нужен для того, что бы каждый раз когда изменяются файлы, у сборки будет изменятся имя,
         // таким образом браузер будет брать файлы не из хеша и отправлять клиенту,
@@ -52,6 +52,15 @@ module.exports = {
                         },
                     },
                 ],
+            },
+            {
+                test: /\.(?:woff2?|svg)$/,
+                type: 'asset/resource',
+                //нужен для того что бы в продакшен создалась директория fonts
+                generator: {
+                    //что бы сохранялось имя и расширение
+                    filename: 'fonts/[name].[ext]',
+                },
             },
             {
                 test: /\.(?:js|mjs|cjs)$/,

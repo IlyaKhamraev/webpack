@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'HussarBoldWeb';
+    src: url('../assets/fonts/HussarBoldWeb-bf92.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'HussarBoldWeb';
+    src: url('../assets/fonts/HussarBoldWeb-ee8d.svg') format('svg');
+}

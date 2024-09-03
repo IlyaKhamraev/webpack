@@ -1,6 +1,7 @@
 import './index.html';
 import './style/normalize.css';
 import './style/style.css';
+import './style/fonts.css';
 import { mult, sum } from './modules/index';
 
 const arr = [10, 2];

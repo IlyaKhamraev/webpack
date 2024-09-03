@@ -2,4 +2,5 @@ body {
     background-color: beige;
     color: green;
     user-select: none;
+    font-family: 'HussarBoldWeb', sans-serif;
 }
