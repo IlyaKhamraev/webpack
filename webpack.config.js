@@ -12,6 +12,11 @@ module.exports = {
     mode,
     target,
     devtool,
+    devServer: {
+        port: 3000,
+        open: true,
+        hot: true,
+    },
     entry: path.resolve(__dirname, 'src', 'index.js'),
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -47,6 +52,18 @@ module.exports = {
                         },
                     },
                 ],
+            },
+            {
+                test: /\.(?:js|mjs|cjs)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/preset-env', { targets: 'defaults' }],
+                        ],
+                    },
+                },
             },
         ],
     },
