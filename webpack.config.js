@@ -24,7 +24,8 @@ module.exports = {
         // [contenthash] - нужен для того, что бы каждый раз когда изменяются файлы, у сборки будет изменятся имя,
         // таким образом браузер будет брать файлы не из хеша и отправлять клиенту,
         // а будет новые скачивать, если произошли изменения.
-        filename: 'index.[contenthash].js', //
+        filename: '[name].[contenthash].js',
+        assetModuleFilename: 'assets/[name][ext]',
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -61,6 +62,35 @@ module.exports = {
                     //что бы сохранялось имя и расширение
                     filename: 'fonts/[name].[ext]',
                 },
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                use: [
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                            },
+                            // optipng.enabled: false will disable optipng
+                            optipng: {
+                                enabled: false,
+                            },
+                            pngquant: {
+                                quality: [0.65, 0.9],
+                                speed: 4,
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            // the webp option will enable WEBP
+                            webp: {
+                                quality: 75,
+                            },
+                        },
+                    },
+                ],
+                type: 'asset/resource',
             },
             {
                 test: /\.(?:js|mjs|cjs)$/,

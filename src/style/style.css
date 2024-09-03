@@ -4,3 +4,13 @@ body {
     user-select: none;
     font-family: 'HussarBoldWeb', sans-serif;
 }
+
+.header_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_logo_img {
+    max-width: 200px;
+}
